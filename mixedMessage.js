@@ -12,11 +12,10 @@ const emotions = ['Happy', 'Sad', 'Angry', 'Embarrased', 'Tired'];
 
 //This function will return a string with a set phrase with a random word from each of the above data sets in it
 createMessage = () => {
-    return `Today it is ${days[random(days.length)]}, I am ${emotions[random(emotions.length)]} and it is ${weather[random(weather.length)]} outside.`;
+    daysRandom = Math.floor(Math.random()*days.length)
+    weatherRandom = Math.floor(Math.random()*weather.length)
+    emotionsRandom = Math.floor(Math.random()*emotions.length)
+    return `Today it is ${days[daysRandom]}, I am ${emotions[emotionsRandom]} and it is ${weather[weatherRandom]} outside.`;
 }
-
-//This function will return a random integer between 0 & including max
-random = max =>{
-    return Math.floor(Math.round()*(max+1));
-}
-
+//The below code calls the 'createMessage' function and logs what it returns
+console.log(createMessage());
